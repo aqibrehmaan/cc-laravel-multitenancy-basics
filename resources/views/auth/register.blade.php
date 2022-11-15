@@ -9,11 +9,29 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="/register">
             @csrf
 
-            <!-- Name -->
+            <!-- Company -->
             <div>
+                <x-label for="company" :value="__('Company')" />
+
+                <x-input id="company" class="block mt-1 w-full" type="text" name="company" :value="old('company')" required/>
+            </div>
+
+             <!-- Domain -->
+             <div class="mt-2">
+                <x-label for="domain" :value="__('Domain')" />
+
+                <div class="flex items-baseline">
+                    <x-input id="domain" class="block mt-1 mr-2 w-full" type="text" name="domain" :value="old('domain')" required/>
+                    .{{ config('tenancy.central_domains')[1] }}
+                </div>
+
+            </div>
+
+            <!-- Name -->
+            <div class="mt-2">
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />

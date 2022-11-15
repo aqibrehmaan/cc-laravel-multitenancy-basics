@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisteredTenantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// register create a tenant
+
+Route::get('/register', [RegisteredTenantController::class, 'create' ]);
+Route::post('/register', [RegisteredTenantController::class, 'store' ]);
