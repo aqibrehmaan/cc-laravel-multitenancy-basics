@@ -14,4 +14,11 @@ class Tenant extends ModelsTenant implements TenantWithDatabase
     use HasFactory;
     use HasDatabase;
     use HasDomains;
+
+    public static function booted()
+    {
+        static::creating(function($tenant) {
+            $tenant->password = bcrypt($tenant->password);
+        });
+    }
 }
