@@ -38,7 +38,7 @@ Route::group([
     });
 
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('tenant/dashboard');
     })->middleware(['auth'])->name('dashboard');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
