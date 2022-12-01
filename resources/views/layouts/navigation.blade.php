@@ -10,10 +10,21 @@
                     </a>
                 </div>
 
+{{--
+                <a  class="ml-4" href="{{ route('tenant.register') }}">
+                    Registrar Tenant
+                </a> --}}
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('tenant.dashboard')" :active="request()->routeIs('tenant.dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tenant.register')" >
+                        {{ __('Register Tenant') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tenants.show_tenant')" >
+                        {{ __('Show Tenants') }}
                     </x-nav-link>
                 </div>
             </div>

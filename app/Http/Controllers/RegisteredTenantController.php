@@ -11,7 +11,7 @@ class RegisteredTenantController extends Controller
 {
     public function create()
     {
-        return view('auth.register');
+        return view('auth.register-tenant');
     }
 
     public function store(RegisteredTenantRequest $request)
